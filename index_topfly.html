@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Topfly</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+
+ 
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+#section-features {
+  width: 100vw;
+  height: 100vh;
+  margin: 0px;
+  padding: 0;
+  background: rgb(209,197,211);
+  background: linear-gradient(0deg, rgba(209,197,211,1) 0%, rgba(255,255,255,1) 100%);
+  overflow: hidden;
+}
+.masthead:after{
+    content:"";
+    left:0;
+    top:0;
+    z-index:-1;
+    width:100%;
+    height:100vh;
+    position:absolute;
+    background:url("assets/images/linebg.svg") 100px 50% no-repeat;
+  
+  
+
+}
+
+.hoverbg{
+    fill:#6348AF;
+}
+.masthead {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  white-space: nowrap;
+  font-size: 0;
+  
+align-items:center;
+ padding-left:80px;
+
+}
+
+
+.masthead .obj {
+   position:relative;
+   height: 245px;
+   flex-shrink: 0;
+width:214px;
+
+
+  }
+
+
+  .obj:first-child{
+    margin-left:-58px;
+  }
+  .obj:last-child{
+    margin-right:-58px;
+  }
+.picture{
+  
+  width:180px;
+  height:100%;
+  display:flex;
+justify-content:center;
+
+
+
+position:relative;}
+.picture svg{
+    position:absolute;
+    top:0;
+    left:0;
+  }
+
+.active .picture {
+ 
+}
+
+
+svg{
+  transform-origin:50% 100%;
+}
+
+.obj:nth-child(2n+1){
+    margin-top:-380px;
+}
+.obj:nth-child(2n){
+    margin-top:380px;
+}
+.obj:nth-child(2n+1) .picture{
+
+  transform: rotate(0deg);
+ 
+
+}
+
+
+  .obj:nth-child(2n) .picture {
+ 
+      transform: rotate(180deg);
+  
+
+  }
+      .obj:nth-child(2n) .title{
+        padding-top: 120px;
+        transform: rotate(-180deg);}
+        .obj:nth-child(2n+1) .title{
+
+        }
+  
+        .obj:nth-child(2n) .explanation{
+            transform: rotate(-180deg);
+        }
+
+.obj .explanation{
+  display:block;
+  opacity:0;
+  position:absolute;
+z-index:999999;
+  background:#ffffff;
+  white-space: pre-line;
+  font-size:14px;
+
+  font-family:"Rubik", sans-serif;
+    position: absolute;
+    width: 90%;
+    bottom: 10%;
+
+  border-radius:24px;
+  padding:12px;
+  text-align:center;
+transition:all 0.5s;
+}
+
+
+.obj .title {    white-space: pre-line;
+
+position:relative;
+align-items:center;
+z-index:9999;
+display:inline-block;
+ width:100px;
+
+    margin-top: 38%;
+ font-family: Helvetica;
+ font-weight: bold;
+ font-size: 14px;
+text-align:center;
+ color: #301247;
+ text-decoration: none;
+ backface-visibility: hidden;
+
+}
+
+html {
+	overflow-y: scroll;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	overflow-scrolling: touch;
+}
+body {
+	overflow-y: visible;
+	position: relative;
+  height: unset;
+}
+html, body {
+	overflow-x: hidden;
+	margin: 0;
+}
+
+.explanation.visible{ 
+    opacity:1 !important;
+    transform:translateY(-10px);
+}
+
+
+.obj:nth-child(2n) .explanation{
+    transform:translateY(-10px) rotate(-180deg);
+        }
+
+  .masthead {
+    width: max-content;
+    height: 100vh;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+   .glow{
+    transition:all 0.5s;
+   }
+.shining .glow{
+
+    transform:translateY(90px);
+}
+   </style>
+</head>
+<body>
+
+
+
+<section id="section-features">
+
+
+  
+
+
+ 
+<div class="masthead">
+
+        <div class="obj active">
+         
+              <div class="picture" data-velocity="-10">
+                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#9185EC"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="#D1C5D3"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#874DA4"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                    <a class="title parallax" href="#">Monitoraggio 
+                        veicoli</a>
+<div class="explanation">Posizione in tempo reale ogni pochi secondi. Notifiche illimitate e report. Anche da APP
+</div>
+             
+            </div>
+        </div>
+
+        <div class="obj">
+     
+            <div class="picture">
+                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#9185EC"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="#D1C5D3"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#874DA4"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                  <a class="title parallax" href="#">Controllo Carburante</a>
+<div class="explanation">Carburante reale, identificazione furti, incrocio carte carburante
+
+</div>
+            </div>
+           
+   
+      </div>
+
+        <div class="obj">
+     
+              <div class="picture">
+                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#9185EC"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="#D1C5D3"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#874DA4"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                    <a class="title parallax" href="#">Centralina e 
+                        anomalie veicolo</a>
+<div class="explanation">Lettura anomalie del veicolo, monitoraggio dati centralina (giri motore,…)
+
+</div>
+              </div>
+             
+     
+        </div>
+
+
+
+        <div class="obj">
+     
+            <div class="picture">
+                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#9185EC"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="#D1C5D3"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#874DA4"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                  <a class="title parallax" href="#">Autisti, stile di 
+                    guida e urti</a>
+                    <div class="explanation">Identificazione autisti, monitoraggio stile di guida ed eventuali urti. Chat con autisti
+
+                    </div>
+            </div>
+        </div>
+   
+            
+        <div class="obj">
+     
+            <div class="picture">
+                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                    <defs>
+                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                    <stop offset="1" stop-color="#9185EC"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="white"/>
+                    <stop offset="1" stop-color="#D1C5D3"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#874DA4"/>
+                    </linearGradient>
+                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#D91B35"/>
+                    <stop offset="1" stop-color="#8051AE"/>
+                    </linearGradient>
+                    </defs>
+                    </svg>
+                  <a class="title parallax" href="#">Pianificazione
+                    corse e fermate</a>
+                    <div class="explanation">Gestione delle missioni e consegne. Instradamento autisti
+
+                    </div>
+            </div>
+
+           
+
+
+        </div>
+
+
+                <div class="obj">
+     
+                    <div class="picture">
+                        <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                            <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                            <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                            <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                            <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                            <defs>
+                            <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#9185EC" stop-opacity="0"/>
+                            <stop offset="1" stop-color="#9185EC"/>
+                            </linearGradient>
+                            <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="white"/>
+                            <stop offset="1" stop-color="#D1C5D3"/>
+                            </linearGradient>
+                            <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D91B35"/>
+                            <stop offset="1" stop-color="#8051AE"/>
+                            </linearGradient>
+                            <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D91B35"/>
+                            <stop offset="1" stop-color="#874DA4"/>
+                            </linearGradient>
+                            <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#D91B35"/>
+                            <stop offset="1" stop-color="#8051AE"/>
+                            </linearGradient>
+                            </defs>
+                            </svg>
+                          <a class="title parallax" href="#">Scarico 
+                            tachigrafo e 
+                            lettere 
+                            infrazione</a>
+        <div class="explanation">Scarico automatico tachigrafo e generazione lettere infrazione
+        </div>
+                    </div>
+
+
+</div>
+
+
+                    <div class="obj">
+     
+                        <div class="picture">
+                            <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                <defs>
+                                <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#9185EC" stop-opacity="0"/>
+                                <stop offset="1" stop-color="#9185EC"/>
+                                </linearGradient>
+                                <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="white"/>
+                                <stop offset="1" stop-color="#D1C5D3"/>
+                                </linearGradient>
+                                <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#D91B35"/>
+                                <stop offset="1" stop-color="#8051AE"/>
+                                </linearGradient>
+                                <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#D91B35"/>
+                                <stop offset="1" stop-color="#874DA4"/>
+                                </linearGradient>
+                                <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#D91B35"/>
+                                <stop offset="1" stop-color="#8051AE"/>
+                                </linearGradient>
+                                </defs>
+                                </svg>
+                              <a class="title parallax" href="#"> Monitoraggio 
+                                rimorchi e 
+                                scarrabili</a>
+                                <div class="explanation">Posizione e notifiche per rimorchi e scarrabili anche non alimentati
+                                </div>
+                                            </div>
+                        </div>
+
+
+
+                        <div class="obj">
+     
+                            <div class="picture">
+                                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                    <defs>
+                                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                                    <stop offset="1" stop-color="#9185EC"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="white"/>
+                                    <stop offset="1" stop-color="#D1C5D3"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#D91B35"/>
+                                    <stop offset="1" stop-color="#8051AE"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#D91B35"/>
+                                    <stop offset="1" stop-color="#874DA4"/>
+                                    </linearGradient>
+                                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#D91B35"/>
+                                    <stop offset="1" stop-color="#8051AE"/>
+                                    </linearGradient>
+                                    </defs>
+                                    </svg>
+                                  <a class="title parallax" href="#"> Sensoristica aggiuntiva</a>
+                                  <div class="explanation">Connessione sensori via bluetooth (es. temperatura, pneumatici)
+
+                                </div>
+                                            </div>
+                            </div>
+
+
+
+                            <div class="obj">
+     
+                                <div class="picture">
+                                    <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                        <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                        <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                        <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                        <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                        <defs>
+                                        <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#9185EC" stop-opacity="0"/>
+                                        <stop offset="1" stop-color="#9185EC"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="white"/>
+                                        <stop offset="1" stop-color="#D1C5D3"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D91B35"/>
+                                        <stop offset="1" stop-color="#8051AE"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D91B35"/>
+                                        <stop offset="1" stop-color="#874DA4"/>
+                                        </linearGradient>
+                                        <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                        <stop stop-color="#D91B35"/>
+                                        <stop offset="1" stop-color="#8051AE"/>
+                                        </linearGradient>
+                                        </defs>
+                                        </svg>
+                                      <a class="title parallax" href="#">Manutenzioni e scadenze</a>
+                                      <div class="explanation">Notifiche scadenze, gestione costi ed attività di manutenzione 
+
+                                    </div>
+                                                </div>
+                                </div>
+
+
+
+                                <div class="obj">
+     
+                                    <div class="picture">
+                                        <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                            <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                            <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                            <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                            <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                            <defs>
+                                            <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#9185EC" stop-opacity="0"/>
+                                            <stop offset="1" stop-color="#9185EC"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="white"/>
+                                            <stop offset="1" stop-color="#D1C5D3"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D91B35"/>
+                                            <stop offset="1" stop-color="#8051AE"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D91B35"/>
+                                            <stop offset="1" stop-color="#874DA4"/>
+                                            </linearGradient>
+                                            <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#D91B35"/>
+                                            <stop offset="1" stop-color="#8051AE"/>
+                                            </linearGradient>
+                                            </defs>
+                                            </svg>
+                                          <a class="title parallax" href="#">Prevenzione 
+                                            furto e assistenza</a>
+                                            <div class="explanation">Dispositivo nascosto aggiuntivo, blocco motore, centrale operativa 24h
+                                            </div>
+                                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="obj">
+     
+                                        <div class="picture">
+                                            <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                <defs>
+                                                <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                <stop offset="1" stop-color="#9185EC"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="white"/>
+                                                <stop offset="1" stop-color="#D1C5D3"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#D91B35"/>
+                                                <stop offset="1" stop-color="#8051AE"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#D91B35"/>
+                                                <stop offset="1" stop-color="#874DA4"/>
+                                                </linearGradient>
+                                                <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#D91B35"/>
+                                                <stop offset="1" stop-color="#8051AE"/>
+                                                </linearGradient>
+                                                </defs>
+                                                </svg>
+                                              <a class="title parallax" href="#">Dashcam e
+                                                assistenza 
+                                               alla guida</a>
+                                               <div class="explanation">Videosorveglianza a bordo consultabile da remoto. Dashcam per assistenza autista
+                                            </div>
+                                                        </div>
+                                        </div>
+
+
+
+
+                                        <div class="obj">
+     
+                                            <div class="picture">
+                                                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                    <defs>
+                                                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                    <stop offset="1" stop-color="#9185EC"/>
+                                                    </linearGradient>
+                                                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white"/>
+                                                    <stop offset="1" stop-color="#D1C5D3"/>
+                                                    </linearGradient>
+                                                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#D91B35"/>
+                                                    <stop offset="1" stop-color="#8051AE"/>
+                                                    </linearGradient>
+                                                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#D91B35"/>
+                                                    <stop offset="1" stop-color="#874DA4"/>
+                                                    </linearGradient>
+                                                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#D91B35"/>
+                                                    <stop offset="1" stop-color="#8051AE"/>
+                                                    </linearGradient>
+                                                    </defs>
+                                                    </svg>
+                                                  <a class="title parallax" href="#">Car sharing</a>
+                                                  <div class="explanation">Apertura portiere con codice di sblocco o APP. Chiusura automatica a condizione predefinita
+                                                </div>
+                                                            </div>
+                                            </div>
+
+
+                                            <div class="obj">
+     
+                                                <div class="picture">
+                                                    <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                        <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                        <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                        <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                        <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                        <defs>
+                                                        <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                        <stop offset="1" stop-color="#9185EC"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="white"/>
+                                                        <stop offset="1" stop-color="#D1C5D3"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D91B35"/>
+                                                        <stop offset="1" stop-color="#8051AE"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D91B35"/>
+                                                        <stop offset="1" stop-color="#874DA4"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D91B35"/>
+                                                        <stop offset="1" stop-color="#8051AE"/>
+                                                        </linearGradient>
+                                                        </defs>
+                                                        </svg>
+                                                      <a class="title parallax" href="#">Pianificazione corse e fermate</a>
+                                                        <div class="explanation">Percorsi con fermate, pianificazione corse, verifica puntualità, notifiche uscita percorso.
+
+                                                        </div>
+                                                                    </div>
+                                                </div>
+
+                                            <div class="obj">
+     
+                                                <div class="picture">
+                                                    <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                        <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                        <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                        <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                        <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                        <defs>
+                                                        <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                        <stop offset="1" stop-color="#9185EC"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="white"/>
+                                                        <stop offset="1" stop-color="#D1C5D3"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D91B35"/>
+                                                        <stop offset="1" stop-color="#8051AE"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D91B35"/>
+                                                        <stop offset="1" stop-color="#874DA4"/>
+                                                        </linearGradient>
+                                                        <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                        <stop stop-color="#D91B35"/>
+                                                        <stop offset="1" stop-color="#8051AE"/>
+                                                        </linearGradient>
+                                                        </defs>
+                                                        </svg>
+                                                      <a class="title parallax" href="#">Paline virtuali e Notifiche ai 
+                                                        genitori</a>
+                                                        <div class="explanation">Notifica e previsione per arrivo bus. 
+                                                            Avviso autisti per passeggeri in attesa
+                                                            
+                                                        </div>
+                                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="obj">
+     
+                                                    <div class="picture">
+                                                        <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                            <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                            <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                            <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                            <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                            <defs>
+                                                            <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                            <stop offset="1" stop-color="#9185EC"/>
+                                                            </linearGradient>
+                                                            <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="white"/>
+                                                            <stop offset="1" stop-color="#D1C5D3"/>
+                                                            </linearGradient>
+                                                            <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#D91B35"/>
+                                                            <stop offset="1" stop-color="#8051AE"/>
+                                                            </linearGradient>
+                                                            <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#D91B35"/>
+                                                            <stop offset="1" stop-color="#874DA4"/>
+                                                            </linearGradient>
+                                                            <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                            <stop stop-color="#D91B35"/>
+                                                            <stop offset="1" stop-color="#8051AE"/>
+                                                            </linearGradient>
+                                                            </defs>
+                                                            </svg>
+                                                          <a class="title parallax" href="#">Condivisione dati 
+                                                            con terze parti</a>
+                                                            <div class="explanation">Invio dati a terze parti tramite link sicuro. Gestione sottoutenze illimitate
+                                                            </div>
+                                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="obj">
+     
+                                                        <div class="picture">
+                                                            <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                                <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                                <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                                <defs>
+                                                                <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                                <stop offset="1" stop-color="#9185EC"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="white"/>
+                                                                <stop offset="1" stop-color="#D1C5D3"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#D91B35"/>
+                                                                <stop offset="1" stop-color="#8051AE"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#D91B35"/>
+                                                                <stop offset="1" stop-color="#874DA4"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#D91B35"/>
+                                                                <stop offset="1" stop-color="#8051AE"/>
+                                                                </linearGradient>
+                                                                </defs>
+                                                                </svg>
+                                                              <a class="title parallax" href="#">Sviluppo APP 
+                                                                integrate</a>
+                                                                <div class="explanation">APP personalizzate che si integrano con i dati di localizzazione
+
+                                                                </div>
+                                                                            </div>
+                                                        </div>
+
+                                                      
+
+
+                                                        <div class="obj">
+     
+                                                            <div class="picture">
+                                                                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                                    <defs>
+                                                                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                                    <stop offset="1" stop-color="#9185EC"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="white"/>
+                                                                    <stop offset="1" stop-color="#D1C5D3"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#D91B35"/>
+                                                                    <stop offset="1" stop-color="#8051AE"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#D91B35"/>
+                                                                    <stop offset="1" stop-color="#874DA4"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#D91B35"/>
+                                                                    <stop offset="1" stop-color="#8051AE"/>
+                                                                    </linearGradient>
+                                                                    </defs>
+                                                                    </svg>
+                                                                  <a class="title parallax" href="#">Integrazione con altri software</a>
+                                                                    <div class="explanation">  Integrazione con software gestionali. Invio dati a terze parti
+                                                                    </div>
+                                                                                </div>
+                                                            </div>
+                                                        
+
+
+                                                    <div class="obj">
+     
+                                                        <div class="picture">
+                                                            <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                                <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                                <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                                <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                                <defs>
+                                                                <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                                <stop offset="1" stop-color="#9185EC"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="white"/>
+                                                                <stop offset="1" stop-color="#D1C5D3"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#D91B35"/>
+                                                                <stop offset="1" stop-color="#8051AE"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#D91B35"/>
+                                                                <stop offset="1" stop-color="#874DA4"/>
+                                                                </linearGradient>
+                                                                <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                                <stop stop-color="#D91B35"/>
+                                                                <stop offset="1" stop-color="#8051AE"/>
+                                                                </linearGradient>
+                                                                </defs>
+                                                                </svg>
+                                                              <a class="title parallax" href="#">Instradamento e percorsi 
+                                                                ottimizzati</a>
+                                                                <div class="explanation">Creazione di percorsi inserendo vincoli del veicolo e invio su tablet autista
+
+                                                                </div>
+                                                                            </div>
+                                                        </div>
+                                                        <div class="obj">
+     
+                                                            <div class="picture">
+                                                                <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path  class="glow" d="M110.115 90.8119L152.659 186.863L35.2728 186.863L68.9054 90.8118L110.115 90.8119Z" fill="url(#paint0_linear_620_663)"/>
+                                                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" fill="url(#paint1_linear_620_663)"/>
+                                                                    <rect x="7.85872"  y="7.85872" width="164.16" height="164.16" rx="82.0799" stroke="url(#paint2_linear_620_663)" stroke-width="15.7174"/>
+                                                                    <path d="M89.9385 226.156L54.3969 164.596L125.48 164.596L89.9385 226.156Z" fill="url(#paint3_linear_620_663)"/>
+                                                                    <circle cx="89.6468" cy="259.183" r="19.6468" fill="url(#paint4_linear_620_663)" stroke="white" stroke-opacity="0.44" stroke-width="22"/>
+                                                                    <defs>
+                                                                    <linearGradient id="paint0_linear_620_663" x1="93.966" y1="186.863" x2="93.966" y2="90.8118" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#9185EC" stop-opacity="0"/>
+                                                                    <stop offset="1" stop-color="#9185EC"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint1_linear_620_663" x1="89.9387" y1="0" x2="89.9387" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="white"/>
+                                                                    <stop offset="1" stop-color="#D1C5D3"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint2_linear_620_663" x1="21.6339" y1="22.9534" x2="125.489" y2="179.877" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#D91B35"/>
+                                                                    <stop offset="1" stop-color="#8051AE"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint3_linear_620_663" x1="74.6577" y1="229.649" x2="73.3479" y2="167.216" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#D91B35"/>
+                                                                    <stop offset="1" stop-color="#874DA4"/>
+                                                                    </linearGradient>
+                                                                    <linearGradient id="paint4_linear_620_663" x1="74.7259" y1="244.55" x2="97.4126" y2="278.83" gradientUnits="userSpaceOnUse">
+                                                                    <stop stop-color="#D91B35"/>
+                                                                    <stop offset="1" stop-color="#8051AE"/>
+                                                                    </linearGradient>
+                                                                    </defs>
+                                                                    </svg>
+                                                                  <a class="title parallax" href="#">Identificazione 
+                                                                    e conta 
+                                                                    passeggeri</a>
+                                                                    <div class="explanation">Conteggio con sistemi a bordo veicolo e identificazione tramite tag bluetooth
+
+                                                                    </div>
+                                                                                </div>
+                                                            </div>
+
+
+
+      </div>
+
+
+  
+ 
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-player/1.4.3/lottie-player.js"></script>-->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@1.3.1/dist/lottie-player.js"></script> 
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+   
+ 
+    
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js"></script>
+
+
+    
+  
+
+
+
+    <script>
+jQuery(document).ready(function($) {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+let sections = gsap.utils.toArray(".obj");
+gsap.set(".masthead", {width: (sections.length * 206) + "px"});
+gsap.to(".masthead", {
+  xPercent: -80,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#section-features",
+    pin: true,
+
+    scrub: 1,
+    snap: 1 / (sections.length - 1),
+    end: () => "+=" + document.querySelector(".masthead").offsetWidth
+  }
+});
+console.log(document.querySelector(".masthead").offsetWidth);
+
+
+$( ".obj" ).each(function(index) {
+    $(this).on("click", function(){
+        console.log("I am clicked");
+       $(this).find("svg").toggleClass("shining");
+       $("svg rect:nth-child(2)").removeClass("hoverbg");
+       $(this).find("svg rect:nth-child(2)").toggleClass("hoverbg");
+       $(".explanation").removeClass("visible");
+
+
+       $(this).find(".explanation").toggleClass("visible");
+    });
+});
+
+
+});
+
+
+
+
+
+        </script>
+</body>
+</html>
