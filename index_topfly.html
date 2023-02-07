@@ -7,201 +7,425 @@
     
     <title>Topfly</title>  
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
-
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
  
-   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
-#section-features {
-  width: 100vw;
-  height: 100vh;
-  margin: 0px;
-  padding: 0;
-  background: rgb(209,197,211);
-  background: linear-gradient(0deg, rgba(209,197,211,1) 0%, rgba(255,255,255,1) 100%);
-  overflow: hidden;
-}
-.masthead:after{
-    content:"";
-    left:0;
-    top:0;
-    z-index:-1;
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+  
+  
+      @font-face {
+      font-family: 'tf-icons';
+      src: url('assets/fonts/Glyphter.eot');
+      src: url('assets/fonts/Glyphter.eot?#iefix') format('embedded-opentype'),
+           url('assets/fonts/Glyphter.woff') format('woff'),
+           url('assets/fonts/Glyphter.ttf') format('truetype'),
+           url('assets/fonts/Glyphter.svg#Glyphter') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  [class*='tf-']:before{
+    display: inline-block;
+     font-family: 'tf-icons';
+     font-style: normal;
+     font-weight: normal;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale
+  }
+  .tf-icon1:before{content:'\0041';}
+  .tf-icon2:before{content:'\0042';}
+  .tf-icon3:before{content:'\0043';}
+  .tf-icon4:before{content:'\0044';}
+  .tf-icon5:before{content:'\0045';}
+  .tf-icon6:before{content:'\0046';}
+  .tf-icon7:before{content:'\0047';}
+  .tf-icon8:before{content:'\0048';}
+  .tf-icon9:before{content:'\0049';}
+  .tf-icon10:before{content:'\004a';}
+  .tf-icon11:before{content:'\004b';}
+  
+  .slider-wrapper{
+
+    position:absolute;
     width:100%;
-    height:100vh;
-    position:absolute;
-    background:url("assets/images/linebg.svg") 100px 50% no-repeat;
-  
-  
-
-}
-
-.hoverbg{
-    fill:#6348AF;
-}
-.masthead {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  white-space: nowrap;
-  font-size: 0;
-  
-align-items:center;
- padding-left:80px;
-
-}
-
-
-.masthead .obj {
-   position:relative;
-   height: 245px;
-   flex-shrink: 0;
-width:214px;
-
-
+    display:block;
+    padding-top:10px;
   }
-
-
-  .obj:first-child{
-    margin-left:-58px;
-  }
-  .obj:last-child{
-    margin-right:-58px;
-  }
-.picture{
-  
-  width:180px;
-  height:100%;
-  display:flex;
-justify-content:center;
-
-
-
-position:relative;}
-.picture svg{
-    position:absolute;
-    top:0;
-    left:0;
-  }
-
-.active .picture {
- 
-}
-
-
-svg{
-  transform-origin:50% 100%;
-}
-
-.obj:nth-child(2n+1){
-    margin-top:-380px;
-}
-.obj:nth-child(2n){
-    margin-top:380px;
-}
-.obj:nth-child(2n+1) .picture{
-
-  transform: rotate(0deg);
- 
-
-}
-
-
-  .obj:nth-child(2n) .picture {
- 
-      transform: rotate(180deg);
-  
-
-  }
-      .obj:nth-child(2n) .title{
-        padding-top: 120px;
-        transform: rotate(-180deg);}
-        .obj:nth-child(2n+1) .title{
-
-        }
-  
-        .obj:nth-child(2n) .explanation{
-            transform: rotate(-180deg);
-        }
-
-.obj .explanation{
-  display:block;
-  opacity:0;
-  position:absolute;
-z-index:999999;
-  background:#ffffff;
-  white-space: pre-line;
-  font-size:14px;
-
-  font-family:"Rubik", sans-serif;
-    position: absolute;
-    width: 90%;
-    bottom: 10%;
-
-  border-radius:24px;
-  padding:12px;
-  text-align:center;
-transition:all 0.5s;
-}
-
-
-.obj .title {    white-space: pre-line;
-
-position:relative;
-align-items:center;
-z-index:9999;
-display:inline-block;
- width:100px;
-
-    margin-top: 38%;
- font-family: Helvetica;
- font-weight: bold;
- font-size: 14px;
-text-align:center;
- color: #301247;
- text-decoration: none;
- backface-visibility: hidden;
-
-}
-
-html {
-	overflow-y: scroll;
-	height: 100%;
-	-webkit-overflow-scrolling: touch;
-	overflow-scrolling: touch;
-}
-body {
-	overflow-y: visible;
-	position: relative;
-  height: unset;
-}
-html, body {
-	overflow-x: hidden;
-	margin: 0;
-}
-
-.explanation.visible{ 
-    opacity:1 !important;
-    transform:translateY(-10px);
-}
-
-
-.obj:nth-child(2n) .explanation{
-    transform:translateY(-10px) rotate(-180deg);
-        }
-
-  .masthead {
-    width: max-content;
+  #section-features {
+    width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-wrap: nowrap;
+    margin: 0px;
+    padding: 0;
+    background: rgb(209,197,211);
+    background: linear-gradient(0deg, rgba(209,197,211,1) 0%, rgba(255,255,255,1) 100%);
+    overflow: hidden;
   }
-   .glow{
-    transition:all 0.5s;
-   }
-.shining .glow{
+  .masthead:after{
+      content:"";
+      left:0;
+      top:0;
+      z-index:-1;
+      width:100%;
+      height:100%;
+      position:absolute;
+      background:url("assets/images/linebg.svg") 100px 50% no-repeat;
+    
+    
+  
+  }
+  .bg-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .hoverbg{
+      fill:#6348AF;
+  }
+  .masthead {
+    position: absolute;
+  left:0;
+  top:150px;
+  margin:0;
+  padding:0;
+    width: 100vw;
+    white-space: nowrap;
+    font-size: 0;
+    
+  align-items:center;
+   padding-left:80px;
+  
+  }
+  
+  
+  .masthead .obj {
+     position:relative;
+     height: 245px;
+     flex-shrink: 0;
+  width:214px;
+  transition:all 0.3s;
+  
+    }
+  
+  
+    .obj:nth-of-type(1){
+      margin-left:-58px;
+    }
+    .obj:nth-last-of-type(){
+      margin-right:-58px;
+    }
+  .picture{
+    
+    width:180px;
+    height:100%;
+    display:flex;
+  justify-content:center;
+  
+  
+  
+  position:relative;}
+  .picture svg{
+      position:absolute;
+      top:0;
+      left:0;
+    }
+  
+  .obj .picture {
+   transition:all 0.2s;
+  }
+  
+  
+  svg{
+    transform-origin:50% 100%;
+  }
+  
+  
+  
+  .obj.even .picture{
+  
+    transform: rotate(0deg) !important;
+   
+  
+  }
+  
+    
+  .obj-active{
+    order:0 !important;
+   
+  }
+  
+   
+  .obj:nth-child(2n) .explanation{
+      transform:translateY(-10px) rotate(-180deg);
+          }
+  
+  
+  .obj.even:nth-of-type(2n+1), .obj:nth-of-type(2n+1){
+    margin-top:-380px;
+  }
+  
+  .obj.odd:nth-of-type(2n), .obj:nth-of-type(2n){
+            margin-top:380px;
+  
+          }
+  
+  
+  
+          .obj.odd:nth-of-type(2n) .picture, .obj:nth-of-type(2n) .picture {
+   
+        transform: rotate(180deg);
+    
+  
+    }
+    .obj.odd:nth-of-type(2n) .title, .obj:nth-of-type(2n) .title{
+          padding-top: 120px;
+          transform: rotate(-180deg);}
+  
+  
+          .obj.odd:nth-of-type(2n) .explanation, .obj:nth-of-type(2n) .explanation{
+              transform: rotate(-180deg);
+          }
+  
+  
+          /* .obj-active:nth-child(2),  .obj-active:nth-child(4),  .obj-active:nth-child(6), .obj-active:nth-child(8),  .obj-active:nth-child(10){
+            margin-top:380px;
+  
+          }*/
+  
+          .obj.even{
+            margin-top:-380px;
+          }
+          .obj.odd{
+            margin-top:380px;
+          }
+  
+  .obj.even .picture{
+  transform: rotate(0deg) !important;
+  }
+  .obj.even .title{
+    transform: rotate(0deg) !important;
+    padding-top:0;
+  }
+  .obj.odd .picture{
+    transform: rotate(180deg);
+  }
+  .obj.odd .title{
+    padding-top: 120px;
+          transform: rotate(-180deg);}
+          .obj.odd .explanation{
+            transform: rotate(-180deg);
+  
+          }
+  
+  
+  
+  .obj .explanation{
+    display:block;
+    opacity:0;
+    position:absolute;
+  z-index:999999;
+    background:#ffffff;
+    white-space: pre-line;
+    font-size:14px;
+  
+    font-family:"Rubik", sans-serif;
+      position: absolute;
+      width: 90%;
+      bottom: 10%;
+  
+    border-radius:24px;
+    padding:12px;
+    text-align:center;
+  transition:all 0.5s;
+  }
+  
+  
+  .obj .title {    white-space: pre-line;
+  
+  position:relative;
+  align-items:center;
+  z-index:9999;
+  display:inline-block;
+   width:100px;
+  
+      margin-top: 38%;
+   font-family: Helvetica;
+   font-weight: bold;
+   font-size: 14px;
+  text-align:center;
+   color: #301247;
+   text-decoration: none;
+   backface-visibility: hidden;
+  
+  }
+  
+  html {
+    overflow-y: scroll;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  body {
+    overflow-y: visible;
+    position: relative;
+    height: unset;
+  }
+  html, body {
+    overflow-x: hidden;
+    margin: 0;
+  }
+  
+  .explanation.visible{ 
+      opacity:1 !important;
+      transform:translateY(-10px);
+  }
+  
+ 
+  
+    .masthead {
+      width: max-content;
+    min-height:50vh;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+     .glow{
+      transition:all 0.5s;
+     }
+  .shining .glow{
+  
+      transform:translateY(90px);
+  }
+  
+  #section-features .bg-wrap{
+  
+    background:url("../assets/images/roads.svg") 0 100% no-repeat;
+    background-size:cover;
+    height:100%;
+    position:absolute;
+    width:100%;
+  }
+  
+  .slick-prev, .slick-next{
+    display:flex;
+    outline:none;
+    border:none;
+  }
+  .square{
+  width:138px;
+  height:138px;
+  border-radius:10px;
+  
+  background:#F5F1F5;
+  font-family:"Rubik", sans-serif;
+  font-size:16px;
+  font-weight:normal;
+  text-align:center;
+  color:#705782;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  
+  justify-content:center;
+  cursor:pointer;
+  }
+  .slick-prev, .slick-next{
+  
+  width:66px;
+ 
+  border-radius:10px;
+  
+  background-color:#F5F1F5;
+  font-family:"Rubik", sans-serif;
+  font-size:16px;
+  font-weight:normal;
+  text-align:center;
+  color:#705782;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  flex-wrap:wrap;
+  justify-content:center;
+  }
+  
+  @media (min-width:991px){
+   .square{
+  width:138px;
+  height:138px;
+  margin:6px;
+  }
+  }
+  
+  @media (max-width:990px){
+    .square{
 
-    transform:translateY(90px);
+  width:100px;
+  height:100px;
+  
+  }
+  .obj.even:nth-of-type(2n+1), .obj:nth-of-type(2n+1), obj.odd, .obj.even:nth-of-type(2n), .obj:nth-of-type(2n), .obj.even{
+
+    margin-top:unset !important;
+  }
+  
+  }
+
+.slick-prev {  text-indent:-99999px;
+  margin-right: 12px;
+  z-index: 99;
+  background: url("assets/images/arrow-left.svg") 0 0 no-repeat;
 }
-   </style>
+.slick-next {  text-indent:-99999px;
+  margin-left: 12px;
+  background: url("assets/images/arrow-right.svg") 0 0 no-repeat;
+}
+  .square.active{
+  
+  background: rgb(217,27,53);
+  background: linear-gradient(45deg, rgba(217,27,53,1) 0%, rgba(128,81,174,1) 100%);
+  color:#fff;
+  }
+  
+  .square i{
+  
+  font-size:7vmin;
+  }
+  #features-slider div:nth-child(1) .square i,
+  #features-slider div:nth-child(2) .square i, 
+  #features-slider div:nth-child(5) .square i, 
+  #features-slider div:nth-child(7) .square i, 
+  #features-slider div:nth-child(10) .square i, 
+  #features-slider div:nth-child(11) .square i{
+  
+  font-size:4vmin;
+  
+  }
+
+  @media(orientation:portrait){
+
+    .square i{
+  
+  font-size:7vmax;
+  }
+  #features-slider div:nth-child(1) .square i,
+  #features-slider div:nth-child(2) .square i, 
+  #features-slider div:nth-child(5) .square i, 
+  #features-slider div:nth-child(7) .square i, 
+  #features-slider div:nth-child(10) .square i, 
+  #features-slider div:nth-child(11) .square i{
+  
+  font-size:4vmax;
+  
+  }
+    
+  }
+  
+  #features-slider{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  }
+  
+  
+     </style>
 </head>
 <body>
 
@@ -209,14 +433,32 @@ html, body {
 
 <section id="section-features">
 
+<div class="bg-wrap">
+  <div class="slider-wrapper">
+  <div id="features-slider" class="slick-slider">
+   <div> <div class="square active" data-active=".a1"><i class="tf-icon1"></i>Tutti</div></div>
+   <div>  <div class="square" data-active=".a2"><i class="tf-icon2"></i>Trasporti
+      pesanti</div></div>
+      <div>   <div class="square" data-active=".a3"><i class="tf-icon3"></i>Bus</div></div>
+      <div>  <div class="square" data-active=".a4"><i class="tf-icon4"></i>Rifiuti</div></div>
+      <div>  <div class="square" data-active=".a5"><i class="tf-icon5"></i>Corrieri</div></div>
+      <div> <div class="square" data-active=".a6"><i class="tf-icon6"></i>Autonoleggi</div></div>
+      <div> <div class="square" data-active=".a7"><i class="tf-icon7"></i> Macchine 
+        operatrici</div></div>
+        <div>  <div class="square" data-active=".a8"><i class="tf-icon8"></i> Sgombero
+          neve</div></div>
+          <div>  <div class="square" data-active=".a9"><i class="tf-icon9"></i> Moto e bici</div></div>
+          <div>  <div class="square" data-active=".a10"><i class="tf-icon10"></i> Imbarcazioni</div></div>
+          <div>  <div class="square" data-active=".a11"><i class="tf-icon11"></i> Persone</div></div>
 
-  
 
+    </div>
+  </div>
 
  
 <div class="masthead">
 
-        <div class="obj active">
+        <div class="obj active a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11">
          
               <div class="picture" data-velocity="-10">
                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -256,7 +498,7 @@ html, body {
             </div>
         </div>
 
-        <div class="obj">
+        <div class="obj a1 a2 a3 a4 a5 a7">
      
             <div class="picture">
                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -297,7 +539,7 @@ html, body {
    
       </div>
 
-        <div class="obj">
+        <div class="obj  a1 a2 a3 a4 a5 a6 a7">
      
               <div class="picture">
                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -341,7 +583,7 @@ html, body {
 
 
 
-        <div class="obj">
+        <div class="obj  a1 a2 a3 a5 a6 a7">
      
             <div class="picture">
                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -382,7 +624,7 @@ html, body {
         </div>
    
             
-        <div class="obj">
+        <div class="obj  a1 a2 a5">
      
             <div class="picture">
                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -427,7 +669,7 @@ html, body {
         </div>
 
 
-                <div class="obj">
+                <div class="obj a1 a2">
      
                     <div class="picture">
                         <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -471,7 +713,7 @@ html, body {
 </div>
 
 
-                    <div class="obj">
+                    <div class="obj a1 a2 a4">
      
                         <div class="picture">
                             <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -513,7 +755,7 @@ html, body {
 
 
 
-                        <div class="obj">
+                        <div class="obj a1 a2 a3 a4 a7 a8 a9 a10 a11">
      
                             <div class="picture">
                                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -554,7 +796,7 @@ html, body {
 
 
 
-                            <div class="obj">
+                            <div class="obj a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11">
      
                                 <div class="picture">
                                     <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -595,7 +837,7 @@ html, body {
 
 
 
-                                <div class="obj">
+                                <div class="obj a1 a2 a3 a4 a5 a6 a7 a9 a10 a11">
      
                                     <div class="picture">
                                         <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -637,7 +879,7 @@ html, body {
 
 
 
-                                    <div class="obj">
+                                    <div class="obj a1 a2 a3 a5 a7 a8 a10">
      
                                         <div class="picture">
                                             <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -680,7 +922,7 @@ html, body {
 
 
 
-                                        <div class="obj">
+                                        <div class="obj a1 a6 a9">
      
                                             <div class="picture">
                                                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -719,7 +961,7 @@ html, body {
                                             </div>
 
 
-                                            <div class="obj">
+                                            <div class="obj a1 a3 a4">
      
                                                 <div class="picture">
                                                     <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -758,7 +1000,7 @@ html, body {
                                                                     </div>
                                                 </div>
 
-                                            <div class="obj">
+                                            <div class="obj a1 a3">
      
                                                 <div class="picture">
                                                     <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -802,7 +1044,7 @@ html, body {
 
 
 
-                                                <div class="obj">
+                                                <div class="obj a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11">
      
                                                     <div class="picture">
                                                         <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -843,7 +1085,7 @@ html, body {
 
 
 
-                                                    <div class="obj">
+                                                    <div class="obj a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11">
      
                                                         <div class="picture">
                                                             <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -886,7 +1128,7 @@ html, body {
                                                       
 
 
-                                                        <div class="obj">
+                                                        <div class="obj a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11">
      
                                                             <div class="picture">
                                                                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -926,7 +1168,7 @@ html, body {
                                                         
 
 
-                                                    <div class="obj">
+                                                    <div class="obj a1 a2 a3 a4 a5 a8">
      
                                                         <div class="picture">
                                                             <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -965,7 +1207,7 @@ html, body {
                                                                 </div>
                                                                             </div>
                                                         </div>
-                                                        <div class="obj">
+                                                        <div class="obj  a1 a3 a11">
      
                                                             <div class="picture">
                                                                 <svg width="180" height="290" viewBox="0 0 180 290" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1010,7 +1252,7 @@ html, body {
 
       </div>
 
-
+    </div>
   
  
 
@@ -1029,24 +1271,184 @@ html, body {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-
-<script src="https://unpkg.com/@lottiefiles/lottie-player@1.3.1/dist/lottie-player.js"></script> 
-
-      
-     
-    <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+ <script src="https://unpkg.com/gsap@3/dist/Draggable.min.js"></script>
 
 
 
     <script>
 jQuery(document).ready(function($) {
 
+ // Draggable.create(".masthead", {
+ // type:"x", 
+ // inertia: true
+//});
+const toActive=undefined;
+$('.square').on('click', function() {
+            const toActive = $(this).attr("data-active"); 
+          
+            console.log(toActive);
+            var neworder=new Array;
+         
+         
+
+
+
+         
+           $(".obj").removeClass("obj-active");
+           $(".obj").removeClass("even");
+           $(".obj").removeClass("odd");
+           $(toActive).addClass("obj-active");
+           gsap.set(".masthead", {width: ($(".obj-active").length * 200) + "px"});
+
+           gsap.to(".masthead",{xPercent:0});
+           $(".obj-active:even").addClass("even");
+           $(".obj-active:odd").addClass("odd");
+           / /// for(let i = 0; i <  $(".obj-active").length; i++) {
+             
+            $(".obj").fadeOut("slow", () => {
+          
+//gsap.to(".obj", {order:'10'});
+//gsap.to(toActive, {order: -1, stagger: .1});
+$(".obj-active").fadeIn();
+});
+
+
+         
+            
+                  // $(".obj-active").style.order=i;
+          
+          //  }
+           
+          
+      
+           
+            $(".square.active").removeClass("active");
+            $(this).addClass("active");
+       
+          });
+
+
+
+          
+var $feature_slider = $('#features-slider')
+        var camel_settings = {
+            autoplay: false,
+            autoplaySpeed: 4000,
+            dots: false,
+            centerMode: false,
+            centerPadding: '0px',
+            infinite: false,
+            slidesToShow: 1,
+            speed: 1000,
+            adaptiveHeight: true,
+            
+            responsive: [
+
+
+
+                {
+                    breakpoint: 99999,
+                    settings: "unslick"
+                },
+
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 6,
+                        slidesToScroll: 6
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4
+                    }
+                },
+                {
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
+
+        };
+
+      
+        $feature_slider.not('.slick-initialized').slick(camel_settings);
+
+
+
+        $(window).resize(function() {
+ 
+
+  if (!$("#features-slider").hasClass('slick-initialized')) {
+
+    console.log("I have to run");
+                    return $("#features-slider").slick(
+
+                        {
+                            autoplay: false,
+                           
+                            dots: false,
+                            centerMode: false,
+                            
+                            slidesToShow: 4,
+                            speed: 1000,
+                            adaptiveHeight:false,
+                            responsive: [
+
+
+
+{
+    breakpoint: 99999,
+    settings: "unslick"
+},
+
+{
+    breakpoint: 991,
+    settings: {
+        slidesToShow: 8,
+        slidesToScroll: 8
+    }
+},
+{
+    breakpoint: 767,
+    settings: {
+        slidesToShow: 6,
+        slidesToScroll: 6
+    }
+},
+{
+    breakpoint: 540,
+    settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+    }
+}
+]
+
+                        }
+                    );
+
+
+                }
+
+  
+});
+
+
     gsap.registerPlugin(ScrollTrigger);
 
 let sections = gsap.utils.toArray(".obj");
-gsap.set(".masthead", {width: (sections.length * 206) + "px"});
+console.log(document.querySelector(".masthead").offsetWidth);
+if(!toActive){
+//gsap.set(".masthead", {width: (sections.length * 144) + "px"});
 gsap.to(".masthead", {
-  xPercent: -80,
+  xPercent: -60,
   ease: "none",
   scrollTrigger: {
     trigger: "#section-features",
@@ -1056,12 +1458,12 @@ gsap.to(".masthead", {
     snap: 1 / (sections.length - 1),
     end: () => "+=" + document.querySelector(".masthead").offsetWidth
   }
-});
-console.log(document.querySelector(".masthead").offsetWidth);
+});}
 
 
 $( ".obj" ).each(function(index) {
-    $(this).on("click", function(){
+    $(this).on("click", function(e){
+      e.preventDefault();
         console.log("I am clicked");
        $(this).find("svg").toggleClass("shining");
        $("svg rect:nth-child(2)").removeClass("hoverbg");
