@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    
+    <title>Topfly</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+     <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel='stylesheet' />
+     <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+     <script src="https://unpkg.com/@maplibre/maplibre-gl-leaflet@0.0.17/leaflet-maplibre-gl.js"></script>
+    <style>
+   @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+        body,html{
+            width:100%;
+            overflow:hidden;
+            margin:0;
+            padding:0; 
+            font-family:"Rubik", sans-serif;
+        }
+
+
+
+   
+  
+  
+      @font-face {
+      font-family: 'tf-icons';
+      src: url('assets/fonts/Glyphter.eot');
+      src: url('assets/fonts/Glyphter.eot?#iefix') format('embedded-opentype'),
+           url('assets/fonts/Glyphter.woff') format('woff'),
+           url('assets/fonts/Glyphter.ttf') format('truetype'),
+           url('assets/fonts/Glyphter.svg#Glyphter') format('svg');
+      font-weight: normal;
+      font-style: normal;
+  }
+  [class*='tf-']:before{
+    display: inline-block;
+     font-family: 'tf-icons';
+     font-style: normal;
+     font-weight: normal;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale
+  }
+  .tf-icon1:before{content:'\0041';}
+  .tf-icon2:before{content:'\0042';}
+  .tf-icon3:before{content:'\0043';}
+  .tf-icon4:before{content:'\0044';}
+  .tf-icon5:before{content:'\0045';}
+  .tf-icon6:before{content:'\0046';}
+  .tf-icon7:before{content:'\0047';}
+  .tf-icon8:before{content:'\0048';}
+  .tf-icon9:before{content:'\0049';}
+  .tf-icon10:before{content:'\004a';}
+  .tf-icon11:before{content:'\004b';}
+  
+  #map{
+   
+    z-index:0;
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  }
+
+  .glow{animation: glowing 4.72s ease infinite;
+z-index:0;
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    background: linear-gradient(45deg, rgba(217,27,53,1) 0%, rgba(128,81,174,0) 100%);
+    border-radius:50%;
+  }
+  .leaflet-zoom-animated{
+
+   
+  }
+.leaflet-right{
+  left: 50%;
+  /*  transform: translate(-50%, 0%);*/
+}
+  .leaflet-zoom-animated:before{
+
+    content:"";
+    display:block;
+    position:absolute;
+    width:180px;
+    height:180px;
+    left:50%;
+    margin-left:-90px;
+    bottom:0;
+    background: linear-gradient(45deg, rgba(217,27,53,1) 0%, rgba(128,81,174,0) 100%);
+    border-radius:90%;
+    animation: glowing 4.72s ease infinite;
+z-index:-1;
+  }
+
+
+
+
+
+  /*Animated*/
+@keyframes glowing{
+  0% {
+    transform: scale(0.5);
+   
+  }
+ 50.78571% {
+    transform: scale(1.8);
+opacity:0;
+  }
+  99.57142% {
+    transform: scale(1.8);
+opacity:0;
+  }
+
+  100% {
+    transform: scale(0.5);
+    opacity:1;
+  }
+ 
+}
+#section-map{
+
+    position:relative;
+    top:0;
+    left:0;
+ overflow:hidden;
+ height:70vh;
+ margin:0;
+ padding:0;
+    background: linear-gradient(0deg, rgba(209,197,211,1) 0%, rgba(255,255,255,1) 100%);
+}
+#glow1, #glow2, #glow3{
+
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+}
+
+#glow1{
+width:180px;
+height:180px;
+left:80vw;
+top:40%;
+z-index:11;
+}
+#glow2{
+    width:120px;
+height:120px;
+    left:12vw;
+    top:60%;
+    z-index:12;
+}
+
+#glow3{
+    width:90px;
+height:90px;
+left:20vw;
+top:10%;
+z-index:13;
+}
+
+#section-map img{
+    max-height:100%;
+
+}
+#glow1 img, #glow2 img, #glow3 img{
+ position:relative;
+    object-fit:scale-down;
+}
+
+.leaflet-popup-content img{
+
+  
+  margin-right:5px;
+  display:flex;
+}
+.leaflet-popup-content h4{
+font-size:20px;
+color:#1F2732;
+margin-bottom:10px;
+font-family:"Rubik", sans-serif;
+}
+
+.leaflet-address{
+  font-family:"Rubik", sans-serif;
+display:flex;
+border-radius:4px;
+background:#F8F8FB;
+align-items:center;
+justify-content:flex-start;
+padding:6px;
+}
+.leaflet-popup-content{
+  min-width:300px;
+}
+
+
+#marker_select {
+  /* Reset Select */
+  appearance: none;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+  /* Personalize */
+  flex: 1;
+  padding: 0 1em;
+  color: #fff;
+  background-color:#662A5C;
+  background-image: none;
+  cursor: pointer;
+  font-family:"Rubik", sans-serif;
+}
+/* Remove IE arrow */
+#marker_select::-ms-expand {
+  display: none;
+}
+/* Custom Select wrapper */
+.mySelector {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: 90px;
+  overflow: hidden;;
+  background: #fff;
+  
+}
+/* Arrow */
+.mySelector::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: #000000;
+  border-radius:90%;
+  color:#fff;
+  transition: .25s all ease;
+  pointer-events: none;
+}
+/* Transition */
+.mySelector:hover::after {
+  background:rgba(0,0,0,0.6);
+}
+
+
+
+     </style>
+</head>
+<body>
+
+
+
+<section id="section-map">
+    <div  id="glow1"> <div class="glow"></div><img src="assets/images/decoimg1.webp"></div>
+    <div  id="glow2"> <div class="glow"></div><img src="assets/images/decoimg2.webp"></div>
+    <div  id="glow3">  <div class="glow"></div><img src="assets/images/decoimg3.webp"></div>
+     <div id="map"></div>
+ 
+    </section>
+
+
+
+
+
+
+
+
+
+
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+
+
+    <script>
+
+
+jQuery(document).ready(function($) {
+
+  const key = '130eaJdFaR4aeirH1H6Z';
+     const map = L.map('map').setView([41.2240944,12.5621346], 7);
+    const gl = L.maplibreGL({
+      attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+      style: `https://api.maptiler.com/maps/0d26c199-53d6-46c3-be24-e091d926c7ad/style.json?key=${key}`
+     }).addTo(map);
+
+  
+
+
+
+
+var ticon = L.Icon.extend({
+    options: {
+       
+        iconSize:     [28, 28],
+        
+        iconAnchor:   [6, 94],
+       
+        popupAnchor:  [8, -76]
+    }
+});
+var myIcon = new ticon({iconUrl: 'assets/images/marker.png'});
+
+
+
+
+    // specify popup options 
+    var customOptions =
+        {
+        'maxWidth': '200',
+        'className' : 'custom'
+        }
+
+
+/*L.marker(coordinates1, {icon: myIcon}).addTo(map).bindPopup(address1, customOptions);
+L.marker(coordinates2, {icon: myIcon}).addTo(map).bindPopup(address2, customOptions);
+
+*/
+var stations = {
+  "type": "FeatureCollection",
+  "features": [{
+"type": "Feature",
+    "properties": {
+"city":"Grosseto",
+      
+   "company": "GORI OFFICINA",
+   "address": "via Giordania,16, Grosseto",
+  },
+    "geometry": {
+"type": "Point",
+   "coordinates": [42.7817079,11.102871],
+   "Latitude": 42.7817079,
+   "Longitude": 11.102871}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Verona",
+   "company": "Rencar Srl",
+   "address": "Via Portogallo 24 Villafranca Di Verona ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.3671533,10.8583835],
+   "Latitude": 45.3671533,
+   "Longitude": 10.8583835}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Charvensod",
+   "company": "Nuova Auto Alpina",
+   "address": "pont Suaz,39 Charvensod ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.728293,7.31910579999999],
+   "Latitude": 45.728293,
+   "Longitude": 7.3191058}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Verona",
+   "company": "Autoservice Di Cumerlato Loris E C Snc",
+   "address": "via Bresciana 73 Verona "},
+
+   "geometry": {
+"type": "Point",
+   "coordinates": [45.4628137,10.9783831],
+   "Latitude": 45.4628137,
+   "Longitude": 10.9783831}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Lendinara",
+   "company": "Pit Stop Di Roberto Altafin E C Sas",
+   "address": "Via Polesana Per Rovigo 24 Lendinara ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.0815166999999,11.615883],
+   "Latitude": 45.0815167,
+   "Longitude": 11.615883}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Paratico",
+   "company": "ELETTRAUTO CADEI FRANCESCO",
+   "address": "Giuseppe Garibaldi,49 Paratico ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.6539271,9.9516905],
+   "Latitude": 45.6539271,
+   "Longitude": 9.9516905}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"San Martino Di Venezze",
+   "company": "Autofficina Di Dona Sandro",
+   "address": "Via Saline 954 San Martino Di Venezze ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.1129242,11.8586112],
+   "Latitude": 45.1129242,
+   "Longitude": 11.8586112}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Verona",
+   "company": "Autofficina Elettrauto Olivieri",
+   "address": "Via Lucania 3 Verona ",
+  },
+    "geometry": {
+"type": "Point",
+
+  
+   "coordinates": [45.4462124,10.9670293],
+   "Latitude": 45.4462124,
+   "Longitude": 10.9670293}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Verona",
+   "company": "Autofficina Elettrauto Accordini",
+   
+   "address": "Via Mario Calderara 7 Verona ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.4432609,10.9661671],
+   "Latitude": 45.4432609,
+   "Longitude": 10.9661671}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Rovigo",
+   "company": "Gf Motori Rovigo",
+   "address": "Via Maestri Del Lavoro 1F Rovigo ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.0376,11.8033],
+   "Latitude": 45.0376,
+   "Longitude": 11.8033}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Caltanissetta",
+   "company": "Centro Auto di Fabio Li Pira",
+   "address": "zona ind. San Cataldo-C/da Melata 1 Caltanissetta ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.4831552,13.9880975],
+   "Latitude": 37.4831552,
+   "Longitude": 13.9880975}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Cassino",
+   "company": "OK Stereo Rizza",
+   "address": "Falaise 17 Cassino ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [48.8839714,-0.2011816],
+   "Latitude": 48.8839714,
+   "Longitude": -0.2011816}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Brescia",
+   "company": "Gs Autoservice Snc",
+   "address": "Gian Battista Cacciamali 46 Brescia ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.5194332,10.1792362],
+   "Latitude": 45.5194332,
+   "Longitude": 10.1792362}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Brescia",
+   "company": "Carrozzeria G2",
+   "address": "Fura 39 Brescia "},
+
+   "geometry": {
+"type": "Point",
+
+   "coordinates": [45.5415526,10.2118019],
+ 
+
+   "Latitude": 45.5415526,
+   "Longitude": 10.2118019}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Alcamo",
+   "company": "Officina Catania",
+   "address": "Mirga ,2 Alcamo ",
+   
+  },
+    "geometry": {
+"type": "Point",
+"coordinates": [37.9876522,12.9637708],
+   "Latitude": 37.9876522,
+   "Longitude": 12.9637708}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Calcinato",
+   "company": "Officina Meccanica Garage",
+   "address": "Via XX settembre Calcinato ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.4555048,10.416853],
+   "Latitude": 45.4555048,
+   "Longitude": 10.416853}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Assago",
+   "company": "Twin Motor Srl",
+   "address": "Via De Vecchi 7U Assago ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.410757,9.1192457],
+   "Latitude": 45.410757,
+   "Longitude": 9.1192457}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Villaggio Mosè",
+   "company": "Installatore Dispositivi Dukic",
+   "address": "Viale Leonardo Sciascia 48/50 Villaggio Mosè ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.2783244,13.6098939],
+   "Latitude": 37.2783244,
+   "Longitude": 13.6098939}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":" Torinese",
+   "company": "RE.VI. Veicoli Industriali S.p.a.",
+   "address": "Paganini 3 Settimo Torinese ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.1450635,7.7399711],
+   "Latitude": 45.1450635,
+   "Longitude": 7.7399711}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Agrigento",
+   "company": "Sciabica Multiservice",
+   "address": "Via Unità D'Italia,64 Agrigento ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.331059,13.5969802],
+   "Latitude": 37.331059,
+   "Longitude": 13.5969802}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Gorizia",
+   "company": "A. mlakar S.R.L.",
+   "address": "Terza Armata,105 Gorizia ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.9283852,13.6225265],
+   "Latitude": 45.9283852,
+   "Longitude": 13.6225265}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Agrigento",
+   "company": "Turone srl",
+   "address": "Via Della Rodisia 3 Agrigento ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.2730625,13.6135013],
+   "Latitude": 37.2730625,
+   "Longitude": 13.6135013}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Canicattì",
+   "company": "Autofficina E Centro Revisione Greco Pietro",
+   "address": "Olanda , 6 Canicattì ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.3523041,13.8415105],
+   "Latitude": 37.3523041,
+   "Longitude": 13.8415105}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Favara",
+   "company": "Patti Service",
+   "address": "Viale Enrico Berlinguer 108 Favara ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.3034385,13.6692644],
+   "Latitude": 37.3034385,
+   "Longitude": 13.6692644}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Canicattì",
+   "company": "Officina Meccanica Cambi Automatici Fratelli Rinaudo",
+
+   "address": "Contrada Ponte Bonavia Snc Canicattì ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.3581785,13.8506902],
+   "Latitude": 37.3581785,
+   "Longitude": 13.8506902}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Dossobuono",
+   "company": "Carrozzeria Flli Vicentini",
+   "address": "Staffali 31 Dossobuono ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.3920247999999,10.9127486],
+   "Latitude": 45.3920248,
+   "Longitude": 10.9127486}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Canicattì",
+   "company": "Autofficina Meccanica Am Service Arnone",
+
+   "address": "Contrada Marrone Canicattì ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.3581785,13.8506902],
+   "Latitude": 37.3581785,
+   "Longitude": 13.8506902}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Agrigento",
+   "company": "Ferrara Officina Meccanica Veicoli Industriali",
+   "address": "Contrada S Benedetto Snc Agrigento ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.371598,13.6399098],
+   "Latitude": 37.371598,
+   "Longitude": 13.6399098}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"San Biagio Platani",
+   "company": "Di Marco Car",
+   "address": "Viale Michelangelo Adamo San Biagio Platani ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.510886,13.5360112],
+   "Latitude": 37.510886,
+   "Longitude": 13.5360112}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Agrigento",
+   "company": "Autofficina Nocera Srl",
+   "address": "Unità D'Italia, 91/95 Agrigento ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.3351211,13.5947523],
+   "Latitude": 37.3351211,
+   "Longitude": 13.5947523}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Sciacca",
+   "company": "Auto Nicolosi",
+   "address": "Via Delle Begonie 13 Sciacca ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.5085148,13.0816305],
+   "Latitude": 37.5085148,
+   "Longitude": 13.0816305}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Canicattì",
+   "company": "Autofficina Alb Turbo",
+   "address": "Lazio 26 Canicattì ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.6552418,12.989615],
+   "Latitude": 41.6552418,
+   "Longitude": 12.989615}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Mazara Del Vallo",
+   "company": "Auto Technology Di Pecoraro Antonino",
+   "address": "Degli Archi 70 Mazara Del Vallo ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.6550933,12.5899615],
+   "Latitude": 37.6550933,
+   "Longitude": 12.5899615}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":" Cammarata",
+   "company": "Carrozzeria Daddi Luciano",
+   "address": "Caduti In Guerra 75 Cammarata ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.6387813,13.6401224],
+   "Latitude": 37.6387813,
+   "Longitude": 13.6401224}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Campobello Di Mazara",
+   "company": "G Bianco Srl",
+   "address": "Via Roma 347 Campobello Di Mazara ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.6388048,12.7492339],
+   "Latitude": 37.6388048,
+   "Longitude": 12.7492339}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Pipitone Angelo",
+   "company": "Officina Riparazione Autoveicoli Pipitone Angelo",
+  },
+    "geometry": {
+"type": "Point",
+
+   "address": "Contrada Strasatti 274 Marsala ",
+   "coordinates": [37.7233582,12.5244019],
+   "Latitude": 37.7233582,
+   "Longitude": 12.5244019}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Naro",
+   "company": "Ford Service Troisi Antonino",
+   "address": "Rotabile Agrigento 97 Naro ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.2973321,13.7869205],
+   "Latitude": 37.2973321,
+   "Longitude": 13.7869205}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Petrosino",
+   "company": "Mondo Auto srl",
+   "address": "Via Regione Siciliana 1 Petrosino ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.6982488,12.5071741],
+   "Latitude": 37.6982488,
+   "Longitude": 12.5071741}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Realmonte",
+   "company": "Schembri Service",
+   "address": "Ss115 Contrada Montagna 1 Realmonte ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.3199009,13.4506215],
+   "Latitude": 37.3199009,
+   "Longitude": 13.4506215}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Alcamo",
+   "company": "Manauto Center And Auto Workshop Revisions",
+   "address": "Ss113 Km 331 Alcamo ",
+  },
+    "geometry": {
+"type": "Point",
+
+ 
+   "coordinates": [37.9775402,12.9446367],
+   "Latitude": 37.9775402,
+   "Longitude": 12.9446367}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Sassari",
+   "company": "Autofficina Rubattu Angelo",
+   "address": "via Predda Niedda Str. 06 Sassari ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [40.7407213,8.5304123],
+   "Latitude": 40.7407213,
+   "Longitude": 8.5304123}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Sassari",
+   "company": "Elettrauto Tore Canu",
+   "address": "strada 32 ( zona Predda Niedda ) Sassari ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [40.735857,8.5238983],
+   "Latitude": 40.735857,
+   "Longitude": 8.5238983}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Matera",
+   "company": "F.lli Colucci di Colucci G. & C. s.n.c. elettrauto centro revisioni",
+   "address": "Via delle Fiere Matera ",
+  },
+    "geometry": {
+"type": "Point",
+
+  
+   "coordinates": [40.6800705,16.5738389],
+   "Latitude": 40.6800705,
+   "Longitude": 16.5738389}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Mazara Del Vallo",
+   "company": "Flli Giacalone Snc Di Giacalone Leonardo E C",
+   "address": "Solferino 50 Mazara Del Vallo ",
+  },
+    "geometry": {
+"type": "Point",
+
+  
+   "coordinates": [37.6569618,12.5959983],
+   "Latitude": 37.6569618,
+   "Longitude": 12.5959983}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Napolitano Oleodinamica",
+   "company": "Officina Meccanica Napolitano Oleodinamica",
+  },
+    "geometry": {
+"type": "Point",
+
+   "address": "Str 29 Sassari ",
+   "coordinates": [40.7374337,8.5250353],
+   "Latitude": 40.7374337,
+   "Longitude": 8.5250353}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Pisogne",
+   "company": "Autofficina Boscolo",
+   "address": "Via Agostino Caggioli 1G 1 piano Pisogne ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.813255,10.109988],
+   "Latitude": 45.813255,
+   "Longitude": 10.109988}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Lecco",
+   "company": "Sca Repair Lecco",
+   "address": "Via Belfiore 22 Lecco ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.8529332,9.40786329999999],
+   "Latitude": 45.8529332,
+   "Longitude": 9.4078633}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"sn Olbia",
+   "company": "Autocarrozzeria Dr Racing",
+   "address": "Via India ,sn Olbia ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [40.9346989,9.5174171],
+   "Latitude": 40.9346989,
+   "Longitude": 9.5174171}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Lecco",
+   "company": "Garage Roberto",
+   "address": "Via Lamarmora,6 Lecco ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.8568879,9.40753679999999],
+   "Latitude": 45.8568879,
+   "Longitude": 9.4075368}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Ladispoli",
+   "company": "Effedi Diesel Srl",
+   "address": "Via Caronte 56 Ladispoli ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.9653701,12.0869665],
+   "Latitude": 41.9653701,
+   "Longitude": 12.0869665}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":" Olbia",
+   "company": "Elettromeccanica Usai",
+   "address": "Via Logudoro 20 Olbia ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [40.9194910999999,9.4928191],
+   "Latitude": 40.9194911,
+   "Longitude": 9.4928191}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Agrigento",
+   "company": "Costa Centro Pneumatici",
+   "address": "Via Degli Eucalipti 7 Agrigento ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.2698352,13.6220401],
+   "Latitude": 37.2698352,
+   "Longitude": 13.6220401}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Ospedaletto",
+   "company": "01 Motori",
+   "address": "via Padre Barsanti Eugenio, 2 Ospedaletto ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [43.6787451999999,10.4325378],
+   "Latitude": 43.6787452,
+   "Longitude": 10.4325378}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Trapani",
+   "company": "Centro Revisioni Mazara E Spezia Srl",
+   "address": "S. Vito Lo Capo, 32 A Trapani ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [38.0186968,12.5362135],
+   "Latitude": 38.0186968,
+   "Longitude": 12.5362135}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Roma",
+   "company": "Autofficina Palmieri Alessio",
+   "address": "Arrigo Davila 88 Roma ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.8683841,12.5278717],
+   "Latitude": 41.8683841,
+   "Longitude": 12.5278717}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Reggio Emilia",
+   "company": "Autofficina Ora",
+   "address": "via Giuseppe Galliano 8 Reggio Emilia ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [44.7064952,10.6231356],
+   "Latitude": 44.7064952,
+   "Longitude": 10.6231356}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Pontassieve",
+   "company": "Officina Gta",
+   "address": "Via Giuseppe Di Vittorio 96 Pontassieve ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [43.7733105999999,11.4306571],
+   "Latitude": 43.7733106,
+   "Longitude": 11.4306571}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Roma",
+   "company": "Officina Damata &figli",
+   "address": "Dameta 50 Roma ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.9183114,12.6059709],
+   "Latitude": 41.9183114,
+   "Longitude": 12.6059709}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Ospedaletto",
+   "company": "Carrozzeria Duomo",
+   "address": "Via Bracci Torsi 30 Ospedaletto ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [43.687162,10.4255727],
+   "Latitude": 43.687162,
+   "Longitude": 10.4255727}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Ciampino",
+   "company": "Pulsoni Luigi",
+   "address": "Via Pietro Mascagni 8 Ciampino ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.80871,12.5957225],
+   "Latitude": 41.80871,
+   "Longitude": 12.5957225}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Presicce",
+   "company": "Autofficina Ponzo Rocco",
+   "address": "Via Della Resistenza 59 Presicce ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [39.9055597,18.2646982],
+   "Latitude": 39.9055597,
+   "Longitude": 18.2646982}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Caltagirone",
+   "company": "Iveco Flli Mineo Srl",
+   "address": "Ctr Poggiarelli Snc Caltagirone ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [37.2380929,14.5126066],
+   "Latitude": 37.2380929,
+   "Longitude": 14.5126066}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Carate Brianza",
+   "company": "Speed Car Moto",
+   "address": "Via Rivera, 63 Carate Brianza ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.6625194999999,9.2373433],
+   "Latitude": 45.6625195,
+   "Longitude": 9.2373433}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Forli",
+   "company": "Man Truck Bus Center Forl",
+   "address": "Via Antico Acquedotto 27 Forli ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [44.242844,12.0906606],
+   "Latitude": 44.242844,
+   "Longitude": 12.0906606}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Roma",
+   "company": "Autofficina Flli Vesprini Di Giorgio E Marco Vesprini Snc",
+   "address": "Cutilia 29 Roma ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.8793398,12.5089881],
+   "Latitude": 41.8793398,
+   "Longitude": 12.5089881}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Cipriano D'Aversa",
+   "company": "Point Service Autofficina Verazzo Giovanni",
+   "address": "Corso Umberto I 105 San Cipriano D'Aversa ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.0041777,14.1373907],
+   "Latitude": 41.0041777,
+   "Longitude": 14.1373907}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Milano",
+   "company": "Okeycar Chiavi E Telecomandi Auto",
+   "address": "Viale Edoardo Jenner 49 Milano ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.4966265,9.17581839999999],
+   "Latitude": 45.4966265,
+   "Longitude": 9.1758184}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Alpignano",
+   "company": "Karma Srl",
+   "address": "Str Campagnola 55 Alpignano ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.1080604,7.5067292],
+   "Latitude": 45.1080604,
+   "Longitude": 7.5067292}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Trani",
+   "company": "Officina Elettrauto Di Savino",
+   "address": "Via Giovanni Verga 3 Trani ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [41.2779474,16.4083245],
+   "Latitude": 41.2779474,
+   "Longitude": 16.4083245}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Baiano",
+   "company": "Officina Colucci Giovanni",
+   "address": "Via Subaiano,2 Baiano ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [40.9485454,14.6065698],
+   "Latitude": 40.9485454,
+   "Longitude": 14.6065698}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Novara",
+   "company": "Pit Stop Gomme",
+   "address": "Via San Giulio,19 Novara ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.4436628,8.6386345],
+   "Latitude": 45.4436628,
+   "Longitude": 8.6386345}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Trana",
+   "company": "Cpo Di Veldorale Vincenzo",
+   "address": "Via Sangano 34 Trana ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.0322336,7.4339891],
+   "Latitude": 45.0322336,
+   "Longitude": 7.4339891}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Biella",
+   "company": "Vfg Motori",
+   "address": "Via Candelo 20 Biella ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.554768,8.0660855],
+   "Latitude": 45.554768,
+   "Longitude": 8.0660855}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Novara",
+   "company": "Automotive Group Novara",
+   "address": "Corso Della Vittoria 16 Novara ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [45.4554702999999,8.62418969999999],
+   "Latitude": 45.4554703,
+   "Longitude": 8.6241897}
+ },
+ { "type": "Feature",
+    "properties": {
+"city":"Romano",
+   "company": "SUONI & IMMAGINI SRLS",
+   "address": "Via Milano, 6/A Fiano Romano ",
+  },
+    "geometry": {
+"type": "Point",
+
+   "coordinates": [42.1401791,12.6015191],
+   "Latitude": 42.1401791,
+   "Longitude": 12.6015191
+    }}
+ 
+]
+
+
+};
+
+
+
+L.geoJSON(stations, {
+    coordsToLatLng: function (coords) {
+        //                    latitude , longitude, altitude
+        //return new L.LatLng(coords[1], coords[0], coords[2]); //Normal behavior
+        return new L.LatLng(coords[0], coords[1], coords[2]);
+    }
+});
+
+
+var markerLayer = L.geoJson(stations, {
+
+  coordsToLatLng: function (coords) {
+        //                    latitude , longitude, altitude
+        //return new L.LatLng(coords[1], coords[0], coords[2]); //Normal behavior
+        return new L.LatLng(coords[0], coords[1], coords[2]);
+    },
+    onEachFeature: function (feature, layer)
+    {layer.setIcon(myIcon);
+        layer.bindPopup("<h4>" + feature.properties.company + "</h4>" +
+    "<div class='leaflet-address'><img src='assets/images/icomap.png'>" + feature.properties.address+"</div>");
+    }
+}).addTo(map);
+map.fitBounds(markerLayer.getBounds());
+//console.log(markerLayer.getBounds());
+
+
+var selector = L.control({
+  position: 'topright'
+});
+
+
+selector.onAdd = function(map) {
+  var div = L.DomUtil.create('div', 'mySelector');
+  div.innerHTML = '<select id="marker_select"><option value="init">Select...</option></select>';
+  return div;
+};
+
+selector.addTo(map);
+
+
+
+markerLayer.eachLayer(function(layer) {
+  var optionElement = document.createElement("option");
+  optionElement.innerHTML = layer.feature.properties.address;
+  optionElement.value = layer._leaflet_id;
+  L.DomUtil.get("marker_select").appendChild(optionElement);
+});
+
+var marker_select = L.DomUtil.get("marker_select");
+L.DomEvent.addListener(marker_select, 'click', function(e) {
+  L.DomEvent.stopPropagation(e);
+});
+L.DomEvent.addListener(marker_select, 'change', changeHandler);
+
+
+function changeHandler(e) {
+  if (e.target.value == "init") {
+    map.closePopup();
+  } else {
+    markerLayer.getLayer(e.target.value).openPopup();
+  }
+}
+
+});
+
+
+
+
+
+        </script>
+</body>
+</html>
